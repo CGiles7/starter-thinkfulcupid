@@ -6,24 +6,35 @@ body {
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 35px;
   font-weight: 400;
   margin: 0 10px 15px 10px;
   text-align: center;
 }
 
 h3 {
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 500;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 p {
   line-height: 1.5em;
   margin: 0;
+  font-size: 22px;
+  padding: 15px;
 }
 
 section {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  font-weight: 500;
+}
+
+section ul {
+  font-size: 20px;
 }
 
 section.alternate-background {
@@ -31,8 +42,9 @@ section.alternate-background {
   color: #ecdbc9;
 }
 
-main img {
-  width: 100px;
+img {
+  width: 100%;
+  margin: 15px 40px 15px 0px;
 }
 
 /* ---  Groups & Items --- */
@@ -54,6 +66,8 @@ main img {
 /* -------  Navigation ------- */
 
 header {
+  display: flex;
+  flex-direction: column;
   background-color: #83092e;
   padding: 20px 20px 0 20px;
   text-align: center;
@@ -61,18 +75,25 @@ header {
 
 .logo {
   font-family: "Tangerine", cursive;
-  font-size: 72px;
+  font-size: 85px;
   color: #ecdbc9;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
 }
 
 header nav ul li {
   list-style-type: none;
 }
-
+ 
 header nav ul li a {
+  flex-direction: column;
   color: #ecdbc9;
   text-decoration: none;
   padding: 0 20px 0 0;
+  font-size: 20px;
 }
 
 header nav ul li a:hover {
@@ -84,10 +105,18 @@ header nav ul li a:hover {
 form {
   border: 2px solid #6b1a22;
   padding: 10px;
+  margin: 10px 30px;
 }
 
 form label {
+  font-size: 20px;
   font-weight: bold;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px
 }
 
 form select,
@@ -100,7 +129,7 @@ form button {
   background-color: #83092e;
   border: none;
   color: #fff;
-  font-size: 24px;
+  font-size: 30px;
   padding: 15px;
   width: 100%;
 }
@@ -118,3 +147,81 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+/* This applies from 600px and larger */
+@media all and (min-width: 600px) {
+  section,
+  h1 {
+    flex-direction: row;
+    padding: 20px;
+  }
+
+  h2 , .group {
+    flex-direction: row;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #match {
+    align-self: center;
+  }
+
+  #about {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #about h2 {
+    flex-shrink: 1;
+    align-self: center;
+  }
+
+  #about2 {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #about2 img {
+    width: 25%;
+    flex-grow: 1;
+    align-self: flex-start;
+  }
+
+  #about2 p {
+    flex-shrink: 1;
+    align-self: flex-start;
+  }
+
+  #blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+  }
+
+  #blog h2 {
+    flex-shrink: 1;
+  }
+
+  #blog2 {
+    flex-grow: 1;
+  }
+
+  .blog {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
+
+  .blog div {
+    flex-grow: 1;
+    padding: 20px;
+  }
+
+  
+}
